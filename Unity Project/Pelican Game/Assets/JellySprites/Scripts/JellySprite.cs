@@ -1871,6 +1871,12 @@ public abstract class JellySprite : MonoBehaviour
 		}
 	}
 
+    public void OnChangeSprite()
+    {
+        UpdateTextureCoords();
+        ReInitMaterial();
+    }
+
 	/// <summary>
 	/// Add a force to every reference point
 	/// </summary>
@@ -1928,12 +1934,12 @@ public abstract class JellySprite : MonoBehaviour
 
 			if(m_ReferencePoints != null)
 			{
-				CalculateInitialOffsets();
+                CalculateInitialOffsets();
 				CalculateWeightingValues();
 			}
 
 			UpdateMesh();
-		}
+        }
 	}
 
 	/// <summary>
